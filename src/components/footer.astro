@@ -1,5 +1,12 @@
+---
+import { Image } from 'astro:assets'
+import Shopify from "../assets/shopify.png";
+---
+
 <footer class="my-20">
-  <p class="text-center text-sm text-slate-500">
+  <p class="text-center text-sm text-gray-400">
      © {new Date().getFullYear()} Elliott. All rights reserved.
+     <a href="https://apps.shopify.com/elliott" target="_blank" style="margin:auto;width:150px;display:block;margin-top:10px;opacity:0.7"><Image src={Shopify} alt="Available on the Shopify app store" width={150} quality={'high'} /></a>
+     <br/><br/>
   </p>
 </footer>
