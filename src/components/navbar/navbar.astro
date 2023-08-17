@@ -3,6 +3,8 @@ import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import { Image } from 'astro:assets'
+import Logo from "../../assets/elliott-logo.jpg";
 
 const menuitems = [
   // {
@@ -39,7 +41,9 @@ const menuitems = [
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg"
-          ><span class="font-bold text-slate-800">Elliott</span>
+          >
+          <Image src={Logo} alt="Elliott - AI Assistant for Shopify" width={50} class="rounded-md transition hover:-translate-y-0.5 hover:shadow-lg"/>
+          <!-- <span class="font-bold text-slate-800">Elliott</span> -->
         </a>
         <div class="block lg:hidden">
           <MenuIcon class="w-4 h-4 text-gray-800" />
@@ -72,13 +76,13 @@ const menuitems = [
           }
         </ul>
         <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="https://apps.shopify.com/elliott" target="_blank" size="md" block>Download</Link>
+          <Link href="https://apps.shopify.com/elliott" target="_blank" size="md" block>Download →</Link>
         </div>
       </MenuItems>
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <Link href="https://apps.shopify.com/elliott" target="_blank" size="md">Download</Link>
+        <Link href="https://apps.shopify.com/elliott" target="_blank" size="md">Try today free →</Link>
       </div>
     </div>
   </header>
