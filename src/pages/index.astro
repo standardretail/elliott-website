@@ -1,22 +1,24 @@
 ---
 import Container from "@components/container.astro";
-import Cta from "@components/cta.astro";
-import Features from "@components/features.astro";
-import Hero from "@components/hero.astro";
-import Logos from "@components/logos.astro";
 import Layout from "@layouts/Layout.astro";
+import { Image } from 'astro:assets'
+import Shopify from "../assets/shopify.png";
 ---
 
 <Layout title="AI Assistant for Shopify">
   <Container>
-        <p class="text-lg leading-relaxed text-slate-500">
+    <div class="shadow-lg" style="max-width: 500px; background: #fafafa; border-radius: 10px; padding: 40px 40px; margin: 80px auto;transform: rotate(-1deg);">
+        <p class="text-lg text-slate-800">
           Hello!<br/><br/>
           You know how time-consuming it is to constantly come up with unique product descriptions?<br/><br/>
           Well, Elliott's here to help. He's great at writing original descriptions for your products, making 
           sure your product page is SEO-friendly and even creating contenet for yoru collection landing pages.<br/><br/>
           And the best part? No more worrying about copied content that could harm your Google SEO rankings.
           <br/><br/>
+          <Image src={Shopify} alt="Available on the Shopify app store" loading="eager" width={190} />
+          <br/><br/>
           - Elliott
         </p>
+      </div>
     </Container>
 </Layout>
