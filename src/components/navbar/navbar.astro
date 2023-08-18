@@ -37,9 +37,9 @@ const menuitems = [
 ---
 
 <Container>
-  <header class="flex flex-col lg:flex-row justify-between items-center my-5">
+  <header class="flex flex-col lg:flex-row justify-between items-center my-5 z-10">
     <Astronav>
-      <div class="flex w-full lg:w-auto items-center justify-between">
+      <div style="z-index:44" class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg"
           >
           <Image src={Logo} alt="Elliott - AI Assistant for Shopify" loading="eager" width={50} class="rounded-md transition hover:-translate-y-0.5 hover:shadow-lg"/>
@@ -50,7 +50,9 @@ const menuitems = [
         </div>
       </div>
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
-        <ul class="flex flex-col lg:flex-row lg:gap-3">
+        <div style="z-index:44">
+        <ul  class="flex flex-col lg:flex-row lg:gap-3">
+  
           {
             menuitems.map((item, index) => (
               <>
@@ -63,7 +65,7 @@ const menuitems = [
                 )}
 
                 {!item.children && (
-                  <li>
+                  <li>    
                     <a
                       href={item.path}
                       class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900">
@@ -74,13 +76,15 @@ const menuitems = [
               </>
             ))
           }
+          
         </ul>
+      </div>
         <div class="lg:hidden flex items-center mt-3 gap-4">
           <Link href="https://apps.shopify.com/elliott" target="_blank" size="md" block>Get started →</Link>
         </div>
       </MenuItems>
     </Astronav>
-    <div>
+    <div style="z-index:44">
       <div class="hidden lg:flex items-center gap-4">
         <Link href="https://apps.shopify.com/elliott" target="_blank" size="md">Get started →</Link>
       </div>

@@ -31,6 +31,9 @@ dependencies:
   astro-seo:
     specifier: ^0.7.5
     version: 0.7.5
+  interactjs:
+    specifier: ^1.10.18
+    version: 1.10.18
   sharp:
     specifier: ^0.32.4
     version: 0.32.4
@@ -833,6 +836,10 @@ packages:
 
   /@fontsource-variable/inter@5.0.5:
     resolution: {integrity: sha512-hmj/jffr+1tabEPmvm+/b89MtbO6hd5PVbQ6HoMGTO7RMF5eD2C9UcprCgZTOF3OWh5uC21C9HZGN0O9wxe+UQ==}
+    dev: false
+
+  /@interactjs/types@1.10.18:
+    resolution: {integrity: sha512-3a+2Kx6PhA60ekxImRQJl+EyT4lD0/kd3/PveyaLtgfNxkxnSWdUq7Ixo3Y/t1lon4EqVGZQgp+qj/QNaEs6qA==}
     dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
@@ -2280,6 +2287,12 @@ packages:
 
   /inline-style-parser@0.1.1:
     resolution: {integrity: sha512-7NXolsK4CAS5+xvdj5OMMbI962hU/wvwoxk+LWR9Ek9bVtyuuYScDN6eS0rUm6TxApFpw7CX1o4uJzcd4AyD3Q==}
+    dev: false
+
+  /interactjs@1.10.18:
+    resolution: {integrity: sha512-ho+Qgr5U3b3oz23Iv7MkIZGoWaTsSCRnrCL34Dtjzs5eFghwpESJeiPj9RhYKc/SgRJL9anR+2OQxFsCg4PmLA==}
+    dependencies:
+      '@interactjs/types': 1.10.18
     dev: false
 
   /is-alphabetical@2.0.1:
