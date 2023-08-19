@@ -1,6 +1,7 @@
 ---
 import Container from "@components/container.astro";
 import Layout from "@layouts/Layout.astro";
+import { YouTube } from '@astro-community/astro-embed-youtube';
 ---
 
 <script>
@@ -101,5 +102,23 @@ interact(window).on("resize", resizeCanvases);
           - Elliott
         </p>
       </div>
+    </Container>
+    <Container>
+      <div class="flex flex-col gap-3 mx-auto max-w-3xl mt-16">
+        <h1 class="font-bold text-3xl text-gray-800">
+          <Fragment slot="title">AI product descriptions for Shopify stores</Fragment>
+        </h1>
+
+        <p class="text-lg leading-relaxed text-gray-500">
+          Simply select one of your products to update and what type of product description you'd like. After a few seconds you'll have new copy ideas to work with.
+        </p>
+      </div>
+      <div class="pt-6">
+        <YouTube id="a-XwlDw4Ppo" playlabel="Play the video" class="rounded-3xl" />
+        <style>
+          lite-youtube {max-width:100%!important;}
+        </style>
+      </div>
+
     </Container>
 </Layout>
