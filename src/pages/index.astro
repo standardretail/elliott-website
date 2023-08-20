@@ -4,87 +4,13 @@ import Layout from "@layouts/Layout.astro";
 import { YouTube } from '@astro-community/astro-embed-youtube';
 ---
 
-<script>
-  import interact from "interactjs"
-  var pixelSize = 16;
-
-interact(".rainbow-pixel-canvas")
-  .origin("self")
-  .draggable({
-    max: Infinity,
-    maxPerElement: Infinity,
-    modifiers: [
-      interact.modifiers.snap({
-        // snap to the corners of a grid
-        targets: [
-          interact.snappers.grid({ x: pixelSize, y: pixelSize })
-        ],
-      })
-    ],
-    listeners: {
-      // draw colored squares on move
-      move: function(event) {
-        var context = event.target.getContext("2d"),
-          // calculate the angle of the drag direction
-          dragAngle = 180 * Math.atan2(event.dx, event.dy) / Math.PI;
-
-        // set color based on drag angle and speed
-        context.fillStyle =
-          "hsl(" +
-          dragAngle +
-          ", 86%, " +
-          (30 + Math.min(event.speed / 1000, 1) * 50) +
-          "%)";
-
-          var x = event.pageX - pixelSize / 2,
-            y = event.pageY - pixelSize / 2;
-
-        // draw squares
-context.fillRect(x, y, pixelSize, pixelSize);
-
-            // Clear the pixel after 3 seconds
-    setTimeout(function() {
-      context.clearRect(x, y, pixelSize, pixelSize);
-    }, 3500);
-      }
-    }
-  })
-  // clear the canvas on doubletap
-  .on("doubletap", function(event) {
-    var context = event.target.getContext("2d");
-
-    context.clearRect(0, 0, context.canvas.width, context.canvas.height);
-  });
-
-function resizeCanvases() {
-  [].forEach.call(document.querySelectorAll(".rainbow-pixel-canvas"), function(
-    canvas
-  ) {
-    canvas.width = document.body.clientWidth;
-    canvas.height = window.innerHeight * 1.7;
-  });
-}
-
-// interact.js can also add DOM event listeners
-interact(document).on("DOMContentLoaded", resizeCanvases);
-interact(window).on("resize", resizeCanvases);
-
-
-</script>
-
-<style>
- .rainbow-pixel-canvas {
-  position: fixed;
-    top: 0;
-    left: 0;
-    -ms-touch-action: none;
-      touch-action: none;
-}
-</style>
-
 <Layout title="Welcome">
-  <canvas class="rainbow-pixel-canvas"></canvas>
   <Container>
+    <div style="opacity: 0.8;
+    background-size: 10px 10px;
+    background-image: repeating-linear-gradient(45deg, #ddd 0, #ddd 1px, #fff 0, #fff 50%);
+    border-radius: 1.5rem;
+    padding: 6px;">
     <div class="shadow-md -rotate-1 transition hover:-translate-y-1 hover:shadow-lg" style="max-width: 461px;background:white;border:1px solid #fafafa;border-radius: 10px; padding: 40px 40px; margin: 80px auto;">
         <p class="text-lg text-gray-800">
           Hello!<br/><br/>
@@ -102,6 +28,7 @@ interact(window).on("resize", resizeCanvases);
           - Elliott
         </p>
       </div>
+    </div>
     </Container>
     <Container>
       <div class="flex flex-col gap-3 mx-auto max-w-3xl mt-16">
@@ -119,6 +46,5 @@ interact(window).on("resize", resizeCanvases);
           lite-youtube {max-width:100%!important;}
         </style>
       </div>
-
     </Container>
 </Layout>
